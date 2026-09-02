@@ -292,6 +292,20 @@
         </div>
     </footer>
 
+    <!-- ====== СКРИМЕР ====== -->
+    <div id="screamer-overlay" style="display:none;position:fixed;inset:0;z-index:99999;background:#000;justify-content:center;align-items:center;cursor:none;">
+        <div id="screamer-face" style="font-size:30vw;color:#fff;text-align:center;line-height:1;animation:screamerShake 0.08s infinite alternate;">
+            <div style="font-size:25vw;">😱</div>
+            <div style="font-size:4vw;font-weight:900;color:#ff0000;font-family:Arial;margin-top:20px;text-shadow:0 0 30px #ff0000;">АААААА!!!</div>
+        </div>
+    </div>
+    <style>
+        @keyframes screamerShake {
+            from { transform: translate(-3px, -2px) rotate(-1deg); }
+            to { transform: translate(3px, 2px) rotate(1deg); }
+        }
+    </style>
+
     <script>
         // ===== Кастомный курсор =====
         (function() {
@@ -417,6 +431,42 @@
                     card.style.setProperty('--mouse-x', x + '%');
                     card.style.setProperty('--mouse-y', y + '%');
                 });
+            });
+        })();
+        // ===== СКРИМЕР =====
+        (function() {
+            var triggered = false;
+            var links = document.querySelectorAll('.footer-links a');
+            links.forEach(function(link) {
+                if (link.textContent.indexOf('Политика') !== -1) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        if (triggered) return;
+                        triggered = true;
+                        var overlay = document.getElementById('screamer-overlay');
+                        overlay.style.display = 'flex';
+                        // Звук крика через Web Audio API
+                        try {
+                            var ctx = new (window.AudioContext || window.webkitAudioContext)();
+                            var osc = ctx.createOscillator();
+                            var gain = ctx.createGain();
+                            osc.connect(gain);
+                            gain.connect(ctx.destination);
+                            osc.type = 'sawtooth';
+                            osc.frequency.setValueAtTime(800, ctx.currentTime);
+                            osc.frequency.exponentialRampToValueAtTime(2000, ctx.currentTime + 0.1);
+                            osc.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + 0.5);
+                            gain.gain.setValueAtTime(0.8, ctx.currentTime);
+                            gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1.5);
+                            osc.start(ctx.currentTime);
+                            osc.stop(ctx.currentTime + 1.5);
+                        } catch(err) {}
+                        // Скрыть через 3 секунды
+                        setTimeout(function() {
+                            overlay.style.display = 'none';
+                        }, 3000);
+                    });
+                }
             });
         })();
     </script>
