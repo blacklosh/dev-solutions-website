@@ -1,18 +1,34 @@
 /* ============================================
-   СТИЛИ ГЛАВНОЙ СТРАНИЦЫ – Hero, услуги, процесс, кейсы, CTA
+   ГЛАВНАЯ СТРАНИЦА – компактный + сваг
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
+/* ---------- Кастомный курсор ---------- */
+.custom-cursor {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    mix-blend-mode: difference;
+}
+
+.custom-cursor.hover {
+    transform: scale(2.5);
+    background: rgba(243, 156, 18, 0.15);
+}
+
 /* ---------- Hero ---------- */
 .hero {
     position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
     background: linear-gradient(135deg, #0f1923 0%, #1a2f45 40%, #2A5C8E 100%);
     overflow: hidden;
     color: var(--text-light);
+    padding: 40px 0 48px;
 }
 
 .hero::before {
@@ -25,6 +41,17 @@
     pointer-events: none;
 }
 
+/* Grain-текстура */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 1;
+}
+
 .hero-grid {
     position: absolute;
     inset: 0;
@@ -33,6 +60,7 @@
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
     pointer-events: none;
+    will-change: transform;
 }
 
 .hero-particles {
@@ -63,7 +91,7 @@
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 650px;
+    text-align: center;
 }
 
 .hero-badge {
@@ -72,19 +100,18 @@
     gap: 8px;
     background: rgba(243, 156, 18, 0.15);
     border: 1px solid rgba(243, 156, 18, 0.3);
-    padding: 8px 18px;
+    padding: 6px 16px;
     border-radius: 50px;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--secondary-color);
-    margin-bottom: 28px;
-    animation: fadeInUp 0.6s ease-out;
+    margin-bottom: 16px;
 }
 
 .hero-badge::before {
     content: '';
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background: var(--secondary-color);
     border-radius: 50%;
     animation: pulse-dot 2s infinite;
@@ -97,11 +124,13 @@
 
 .hero h1 {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
     font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    animation: fadeInUp 0.6s ease-out 0.1s both;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero h1 .highlight {
@@ -109,27 +138,46 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
+}
+
+/* Мерцание текста */
+.hero h1 .highlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 .hero-desc {
-    font-size: 1.2rem;
-    line-height: 1.7;
-    opacity: 0.85;
-    margin-bottom: 40px;
-    animation: fadeInUp 0.6s ease-out 0.2s both;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.75;
+    margin-bottom: 24px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-actions {
     display: flex;
-    gap: 16px;
+    gap: 12px;
+    justify-content: center;
     flex-wrap: wrap;
-    animation: fadeInUp 0.6s ease-out 0.3s both;
+    margin-bottom: 32px;
 }
 
 .hero-actions .btn {
-    padding: 16px 36px;
-    font-size: 1rem;
-    border-radius: 12px;
+    padding: 10px 28px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .hero-actions .btn-primary {
@@ -140,7 +188,7 @@
 }
 
 .hero-actions .btn-primary:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px) rotate(-1deg);
     box-shadow: 0 8px 30px rgba(243, 156, 18, 0.5);
 }
 
@@ -152,227 +200,262 @@
 
 .hero-actions .btn-ghost:hover {
     background: rgba(255,255,255,0.15);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
+}
+
+/* Кнопка с тряской */
+.btn-shake:hover {
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    15% { transform: translateX(-4px) rotate(-1deg); }
+    30% { transform: translateX(4px) rotate(1deg); }
+    45% { transform: translateX(-3px) rotate(-0.5deg); }
+    60% { transform: translateX(3px) rotate(0.5deg); }
+    75% { transform: translateX(-2px); }
+    90% { transform: translateX(2px); }
 }
 
 .hero-stats {
     display: flex;
-    gap: 48px;
-    margin-top: 60px;
-    padding-top: 40px;
+    gap: 40px;
+    justify-content: center;
+    padding-top: 24px;
     border-top: 1px solid rgba(255,255,255,0.1);
-    animation: fadeInUp 0.6s ease-out 0.4s both;
 }
 
 .hero-stat-num {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 800;
     color: var(--secondary-color);
     font-family: 'Inter', sans-serif;
 }
 
 .hero-stat-label {
-    font-size: 0.85rem;
-    opacity: 0.6;
-    margin-top: 4px;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    margin-top: 2px;
 }
 
-.hero-visual {
-    position: relative;
-    z-index: 2;
+/* ---------- Бегущая строка ---------- */
+.marquee-section {
+    overflow: hidden;
+    background: var(--dark-bg);
+    padding: 14px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.marquee-track {
     display: flex;
-    justify-content: center;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    display: flex;
     align-items: center;
+    gap: 12px;
+    padding: 0 28px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.hero-code-block {
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-    padding: 32px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
-    line-height: 1.8;
-    color: #e0e0e0;
-    max-width: 420px;
-    animation: fadeInRight 0.8s ease-out 0.3s both;
-}
-
-.hero-code-block .line-num {
-    color: rgba(255,255,255,0.25);
-    user-select: none;
-    margin-right: 16px;
-}
-
-.hero-code-block .keyword { color: #c678dd; }
-.hero-code-block .func { color: #61afef; }
-.hero-code-block .string { color: #98c379; }
-.hero-code-block .comment { color: #5c6370; font-style: italic; }
-.hero-code-block .prop { color: #e06c75; }
-
-.hero-code-block .cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1em;
+.marquee-item .dot {
+    width: 5px;
+    height: 5px;
     background: var(--secondary-color);
-    animation: blink 1s step-end infinite;
-    vertical-align: middle;
+    border-radius: 50%;
+    opacity: 0.5;
 }
 
-@keyframes blink {
-    50% { opacity: 0; }
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(40px); }
-    to { opacity: 1; transform: translateX(0); }
+/* ---------- Разделители ---------- */
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+    opacity: 0.2;
+    margin: 0;
 }
 
 /* ---------- Секция услуг ---------- */
 .services-section {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--light-bg);
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
-    margin-top: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
 }
 
 .service-card {
     background: #fff;
-    border-radius: 16px;
-    padding: 40px 32px;
+    border-radius: 12px;
+    padding: 28px 24px;
     text-align: left;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
+/* Hover-свечение */
 .service-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 3px;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.4s ease;
+    transition: transform 0.3s ease;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(243, 156, 18, 0.06) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
 }
 
 .service-card:hover::before {
     transform: scaleX(1);
 }
 
+.service-card:hover::after {
+    opacity: 1;
+}
+
 .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
 }
 
 .service-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    margin-bottom: 24px;
-    background: linear-gradient(135deg, rgba(42,92,142,0.1), rgba(243,156,18,0.1));
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+    display: inline-block;
+}
+
+/* Плавающие эмодзи */
+.service-card:hover .service-icon {
+    animation: float-emoji 0.6s ease-in-out;
+}
+
+@keyframes float-emoji {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-8px) rotate(-5deg); }
+    50% { transform: translateY(-4px) rotate(3deg); }
+    75% { transform: translateY(-6px) rotate(-2deg); }
 }
 
 .service-card h3 {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     color: var(--dark-bg);
 }
 
 .service-card p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .service-card .learn-more {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    margin-top: 20px;
+    gap: 4px;
+    margin-top: 14px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--primary-color);
     transition: gap 0.3s;
 }
 
 .service-card .learn-more:hover {
-    gap: 12px;
+    gap: 10px;
 }
 
 /* ---------- Процесс ---------- */
 .process-section {
-    padding: 100px 0;
+    padding: 60px 0;
     background: #fff;
 }
 
 .process-steps {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-    position: relative;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 32px;
 }
 
 .process-step {
     text-align: center;
-    position: relative;
+    cursor: default;
+}
+
+.process-step:hover .step-number {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 24px rgba(42, 92, 142, 0.4);
 }
 
 .step-number {
-    width: 72px;
-    height: 72px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-color), #1a4170);
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 24px;
-    position: relative;
-    z-index: 1;
+    margin: 0 auto 14px;
     font-family: 'Inter', sans-serif;
-    box-shadow: 0 8px 24px rgba(42, 92, 142, 0.3);
+    box-shadow: 0 4px 16px rgba(42, 92, 142, 0.3);
+    transition: all 0.3s ease;
 }
 
 .process-step h3 {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     color: var(--dark-bg);
 }
 
 .process-step p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
-/* ---------- Кейсы / портфолио ---------- */
+/* ---------- Кейсы ---------- */
 .cases-section {
-    padding: 100px 0;
+    padding: 60px 0;
     background: var(--dark-bg);
     color: var(--text-light);
 }
@@ -383,75 +466,81 @@
 
 .cases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 28px;
-    margin-top: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
 }
 
 .case-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .case-card:hover {
     transform: translateY(-6px);
     border-color: var(--secondary-color);
-    box-shadow: 0 12px 40px rgba(243, 156, 18, 0.15);
+    box-shadow: 0 12px 32px rgba(243, 156, 18, 0.15);
 }
 
 .case-preview {
-    height: 200px;
+    height: 140px;
     background: linear-gradient(135deg, rgba(42,92,142,0.4), rgba(243,156,18,0.2));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     position: relative;
     overflow: hidden;
+}
+
+.case-card:hover .case-preview {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
 .case-preview::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.6));
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4));
 }
 
 .case-info {
-    padding: 28px;
+    padding: 20px;
 }
 
 .case-tag {
     display: inline-block;
     background: rgba(243, 156, 18, 0.15);
     color: var(--secondary-color);
-    padding: 4px 12px;
+    padding: 3px 10px;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 12px;
-}
-
-.case-info h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
     margin-bottom: 8px;
 }
 
+.case-info h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
 .case-info p {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    line-height: 1.5;
+    font-size: 0.8rem;
+    opacity: 0.65;
+    line-height: 1.4;
 }
 
 /* ---------- Технологии ---------- */
 .tech-section {
-    padding: 80px 0;
+    padding: 48px 0;
     background: var(--light-bg);
     text-align: center;
 }
@@ -461,25 +550,28 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 40px;
-    opacity: 0.5;
+    gap: 24px;
+    margin-top: 28px;
+    opacity: 0.45;
 }
 
 .tech-logo {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--dark-bg);
-    transition: opacity 0.3s;
+    transition: all 0.3s;
+    cursor: default;
 }
 
 .tech-logo:hover {
     opacity: 1;
+    transform: scale(1.15) rotate(-3deg);
+    color: var(--secondary-color);
 }
 
 /* ---------- CTA ---------- */
 .cta-section {
-    padding: 100px 0;
+    padding: 60px 0;
     background: linear-gradient(135deg, var(--primary-color), #1a4170);
     text-align: center;
     color: var(--text-light);
@@ -503,24 +595,24 @@
 }
 
 .cta-section h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     font-family: 'Inter', sans-serif;
 }
 
 .cta-section p {
-    font-size: 1.15rem;
-    opacity: 0.85;
-    max-width: 550px;
-    margin: 0 auto 40px;
-    line-height: 1.7;
+    font-size: 1rem;
+    opacity: 0.8;
+    max-width: 450px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
 }
 
 .cta-section .btn {
-    padding: 18px 48px;
-    font-size: 1.1rem;
-    border-radius: 12px;
+    padding: 14px 40px;
+    font-size: 1rem;
+    border-radius: 10px;
     background: var(--secondary-color);
     color: #000;
     font-weight: 700;
@@ -528,53 +620,54 @@
 }
 
 .cta-section .btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px) scale(1.02);
     box-shadow: 0 8px 30px rgba(243, 156, 18, 0.5);
 }
 
 /* ---------- Отзывы ---------- */
 .testimonials-section {
-    padding: 100px 0;
+    padding: 60px 0;
     background: #fff;
 }
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 28px;
-    margin-top: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
 }
 
 .testimonial-card {
     background: var(--light-bg);
-    border-radius: 16px;
-    padding: 36px;
+    border-radius: 12px;
+    padding: 24px;
     position: relative;
     transition: all 0.3s ease;
+    cursor: default;
 }
 
 .testimonial-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
 .testimonial-card::before {
     content: '\201C';
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: Georgia, serif;
     color: var(--secondary-color);
-    opacity: 0.3;
+    opacity: 0.25;
     position: absolute;
-    top: 16px;
-    left: 24px;
+    top: 12px;
+    left: 18px;
     line-height: 1;
 }
 
 .testimonial-text {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 0.85rem;
+    line-height: 1.6;
     color: #555;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     position: relative;
     z-index: 1;
 }
@@ -582,12 +675,12 @@
 .testimonial-author {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
 }
 
 .testimonial-avatar {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     display: flex;
@@ -595,73 +688,62 @@
     justify-content: center;
     color: #fff;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
 }
 
 .testimonial-name {
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--dark-bg);
 }
 
 .testimonial-role {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #888;
 }
 
 /* ---------- Адаптив ---------- */
 @media (max-width: 768px) {
-    .hero {
-        min-height: auto;
-        padding: 80px 0 60px;
-    }
-
-    .hero-visual {
-        display: none;
-    }
-
-    .hero-stats {
-        gap: 24px;
-    }
-
-    .hero-stat-num {
-        font-size: 1.6rem;
-    }
-
-    .process-steps {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .cases-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .services-grid,
+    .process-steps,
+    .cases-grid,
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
+
+    .custom-cursor { display: none; }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .hero-actions {
         flex-direction: column;
+        align-items: center;
     }
 
     .hero-actions .btn {
         width: 100%;
+        max-width: 260px;
         text-align: center;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .hero-stat-num {
+        font-size: 1.4rem;
     }
 }
 
 /* ---------- Scroll reveal ---------- */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    transform: translateY(24px);
+    transition: all 0.6s cubic-bezier(0.5, 0, 0, 1);
 }
 
 .reveal.visible {
