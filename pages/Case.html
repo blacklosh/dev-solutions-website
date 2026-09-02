@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: FinTech · DevSolutions</title>
+    <style>
+        /* ============================================
+           ПЕРЕМЕННЫЕ ПРОЕКТА (variables.css)
+           ============================================ */
+        :root {
+            --primary-color: #2A5C8E;
+            --secondary-color: #F39C12;
+            --dark-bg: #1E2A3A;
+            --light-bg: #F4F6F9;
+            --text-color: #333333;
+            --text-light: #FFFFFF;
+            --font-main: 'Roboto', 'Arial', sans-serif;
+            --container-width: 1140px;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --spacing-sm: 10px;
+            --spacing-md: 20px;
+            --spacing-lg: 40px;
+            --spacing-xl: 60px;
+        }
+
+        /* ---------- Сброс и базовые стили (common) ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: var(--primary-color); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ---------- Шапка (common) ---------- */
+        .site-header {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: var(--spacing-md) 0;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+        .logo span { color: var(--secondary-color); }
+        .main-nav ul {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .main-nav a:hover { border-bottom-color: var(--secondary-color); }
+
+        /* ---------- Подвал (common) ---------- */
+        .site-footer {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: var(--spacing-lg) 0;
+            margin-top: var(--spacing-xl);
+            border-top: 3px solid var(--secondary-color);
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+        .footer-copy { font-size: 0.9rem; opacity: 0.8; }
+        .footer-links a {
+            color: var(--text-light);
+            margin-left: var(--spacing-md);
+            font-size: 0.9rem;
+        }
+        .footer-links a:hover { color: var(--secondary-color); }
+
+        /* ---------- Переиспользуемые компоненты (common) ---------- */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+        .btn:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow);
+        }
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: #000;
+        }
+        .btn-secondary:hover { background-color: #e08e0b; }
+
+        .card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: var(--spacing-md);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--dark-bg);
+            text-align: center;
+        }
+        .section-title span { color: var(--secondary-color); }
+
+        /* ============================================
+           СТИЛИ ДЛЯ СТРАНИЦЫ КЕЙСА (case-study)
+           ============================================ */
+        .case-hero {
+            padding: 60px 0 50px;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a2f45 60%, var(--primary-color) 100%);
+            color: var(--text-light);
+        }
+        .case-hero .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .case-hero-content {
+            flex: 1 1 50%;
+        }
+        .case-hero-content .badge {
+            display: inline-block;
+            background: rgba(243, 156, 18, 0.2);
+            color: var(--secondary-color);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(243, 156, 18, 0.25);
+        }
+        .case-hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .case-hero-content h1 span {
+            color: var(--secondary-color);
+        }
+        .case-hero-content .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 28px;
+            max-width: 500px;
+        }
+        .case-hero-content .btn {
+            padding: 14px 38px;
+            font-weight: 700;
+        }
+        .case-hero-image {
+            flex: 1 1 40%;
+            background: rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(4px);
+            text-align: center;
+        }
+        .case-hero-image img {
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+            width: 100%;
+        }
+
+        /* Двухколоночные секции (задача / решение) */
+        .two-col-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .two-col-section:nth-child(even) {
+            background: var(--light-bg);
+        }
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .two-col-grid.reverse {
+            direction: rtl;
+        }
+        .two-col-grid.reverse > * {
+            direction: ltr;
+        }
+        .col-text h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-bg);
+        }
+        .col-text h2 span {
+            color: var(--secondary-color);
+        }
+        .col-text p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 16px;
+        }
+        .col-text ul {
+            list-style: disc;
+            padding-left: 22px;
+            margin-top: 10px;
+        }
+        .col-text ul li {
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .col-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+            background: #f0f2f5;
+        }
+        .col-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Галерея скриншотов */
+        .gallery-section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 40px;
+        }
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-item .caption {
+            padding: 14px 18px;
+            font-weight: 500;
+            color: var(--dark-bg);
+            background: #fff;
+            font-size: 0.95rem;
+        }
+
+        /* CTA финальный */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color), #1a4170);
+            color: var(--text-light);
+            text-align: center;
+        }
+        .final-cta h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+        .final-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 35px;
+        }
+        .final-cta .btn {
+            background: var(--secondary-color);
+            color: #000;
+            padding: 16px 48px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 20px rgba(243, 156, 18, 0.35);
+        }
+        .final-cta .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(243, 156, 18, 0.5);
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .two-col-grid,
+            .two-col-grid.reverse {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                direction: ltr;
+            }
+            .two-col-grid.reverse > * { direction: ltr; }
+            .case-hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .case-hero-content .tagline {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .case-hero-image {
+                width: 100%;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .case-hero-content h1 {
+                font-size: 2rem;
+            }
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* лайтбокс */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            object-fit: contain;
+        }
+        .lightbox .close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 3rem;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 300;
+            transition: 0.2s;
+        }
+        .lightbox .close:hover {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ====== ШАПКА ====== -->
+<header class="site-header">
+    <div class="container">
+        <div class="logo">Dev<span>Solutions</span></div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="pages/about.html">О нас</a></li>
+                <li><a href="pages/services.html">Услуги</a></li>
+                <li><a href="pages/portfolio.html">Портфолио</a></li>
+                <li><a href="pages/blog.html">Блог</a></li>
+                <li><a href="pages/contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ====== ОСНОВНОЙ КОНТЕНТ ====== -->
+<main>
+
+    <!-- Hero кейса -->
+    <section class="case-hero">
+        <div class="container">
+            <div class="case-hero-content">
+                <div class="badge">🔹 Кейс · FinTech</div>
+                <h1>Платформа <span>«Invex»</span></h1>
+                <p class="tagline">Инвестиционный дашборд для частных инвесторов с AI-аналитикой</p>
+                <a href="#demo" class="btn btn-secondary">👉 Смотреть демо</a>
+            </div>
+            <div class="case-hero-image">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=340&fit=crop&crop=center" 
+                     alt="Финансовый дашборд Invex">
+            </div>
+        </div>
+    </section>
+
+    <!-- Задача -->
+    <section class="two-col-section">
+        <div class="container">
+            <div class="two-col-grid">
+                <div class="col-text">
+                    <h2>📌 <span>Задача</span></h2>
+                    <p>Клиент — финансовый стартап из Лондона. Нужно было создать единую платформу, где инвесторы могут:</p>
+                    <ul>
+                        <li>Отслеживать портфель в реальном времени</li>
+                        <li>Получать AI-прогнозы по акциям и криптовалютам</li>
+                        <li>Строить кастомные дашборды без кода</li>
+                    </ul>
+                    <p style="margin-top:12px;">Главные требования: <strong>высокая производительность</strong> при загрузке больших объёмов данных и <strong>мобильная адаптивность</strong>.</p>
+                </div>
+                <div class="col-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=340&fit=crop&crop=center" 
+                         alt="Аналитика данных">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Решение -->
+    <section class="two-col-section" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="two-col-grid reverse">
+                <div class="col-text">
+                    <h2>⚙️ <span>Решение</span></h2>
+                    <p>Мы разработали SPA на React + Node.js с использованием WebSocket для стриминга данных. Ключевые фичи:</p>
+                    <ul>
+                        <li><strong>Адаптивный дашборд</strong> с виджетами, перетаскиваемыми в реальном времени</li>
+                        <li><strong>AI-модуль</strong> на Python (FastAPI) для прогнозирования</li>
+                        <li><strong>Кэширование</strong> через Redis для мгновенной загрузки истории</li>
+                    </ul>
+                    <p style="margin-top:12px;">Интерфейс построен на компонентной архитектуре, что позволило легко масштабировать проект и добавлять новые виджеты.</p>
+                </div>
+                <div class="col-image">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=340&fit=crop&crop=center" 
+                         alt="Команда разработки">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея скриншотов -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">🖼️ Скриншоты <span>интерфейса</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=500&h=300&fit=crop&crop=center" 
+                         alt="Дашборд с графиками">
+                    <div class="caption">📊 Главный экран с виджетами</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop&crop=center" 
+                         alt="Аналитика и прогнозы">
+                    <div class="caption">📈 Модуль AI-прогнозов</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop&crop=center" 
+                         alt="Мобильная версия">
+                    <div class="caption">📱 Адаптивная версия</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Финальный CTA -->
+    <section class="final-cta" id="demo">
+        <div class="container">
+            <h2>🚀 Готовы увидеть в деле?</h2>
+            <p>Интерактивное демо доступно по ссылке. Оцените скорость и удобство платформы.</p>
+            <a href="#" class="btn" onclick="alert('Демо-версия доступна по запросу. [ЗАМЕНИТЬ НА РЕАЛЬНУЮ ССЫЛКУ]'); return false;">👉 Открыть демо</a>
+        </div>
+    </section>
+
+</main>
+
+<!-- ====== ПОДВАЛ ====== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-copy">
+                &copy; 2026 DevSolutions. Все права защищены.
+            </div>
+            <div class="footer-links">
+                <a href="pages/about.html">О нас</a>
+                <a href="pages/contacts.html">Контакты</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ====== ЛАЙТБОКС ====== -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Увеличенный скриншот">
+</div>
+
+<script>
+    function openLightbox(el) {
+        const img = el.querySelector('img');
+        if (!img) return;
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        lbImg.src = img.src;
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+    });
+</script>
+
+</body>
+</html>
