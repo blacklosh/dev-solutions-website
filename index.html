@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevSolutions – IT-студия</title>
-    <!-- Подключаем общие стили -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/common.css">
-    <!-- Сюда первая команда добавит свой отдельный файл стилей -->
-    <!-- <link rel="stylesheet" href="css/page-index.css"> -->
+    <link rel="stylesheet" href="css/page-index-main.css">
 </head>
 <body>
 
@@ -28,39 +29,224 @@
         </div>
     </header>
 
-    <!-- ====== ОСНОВНОЙ КОНТЕНТ (заполняется первой парой) ====== -->
     <main>
-        <!-- Секция Hero (заглушка) -->
-        <section style="padding: 60px 0; background: #e9ecef; text-align: center;">
-            <div class="container">
-                <h1 style="font-size: 3rem; margin-bottom: 20px;">Создаём цифровые решения</h1>
-                <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 30px;">
-                    Разработка сайтов, приложений и CRM-систем под ключ.
-                </p>
-                <a href="#" class="btn btn-secondary">Узнать больше</a>
-            </div>
-        </section>
 
-        <!-- Секция преимуществ (заглушка) -->
-        <section style="padding: 60px 0;">
-            <div class="container">
-                <h2 class="section-title">Наши <span>преимущества</span></h2>
-                <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
-                    <div class="card" style="flex: 1 1 200px; text-align: center;">
-                        <h3>Опыт</h3>
-                        <p>Более 5 лет на рынке</p>
+        <!-- ====== HERO ====== -->
+        <section class="hero">
+            <div class="hero-grid"></div>
+            <div class="hero-particles" id="particles"></div>
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <div class="hero-content">
+                    <div class="hero-badge">IT-студия полного цикла</div>
+                    <h1>Создаём <span class="highlight">цифровые продукты</span>, которые работают</h1>
+                    <p class="hero-desc">
+                        Разрабатываем сайты, веб-приложения и CRM-системы под ключ. От идеи до запуска — берём на себя весь процесс.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="pages/contacts.html" class="btn btn-primary">Обсудить проект</a>
+                        <a href="pages/portfolio.html" class="btn btn-ghost">Смотреть кейсы →</a>
                     </div>
-                    <div class="card" style="flex: 1 1 200px; text-align: center;">
-                        <h3>Качество</h3>
-                        <p>Современные технологии</p>
+                    <div class="hero-stats">
+                        <div>
+                            <div class="hero-stat-num" data-count="150">0</div>
+                            <div class="hero-stat-label">Проектов</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-num" data-count="98">0</div>
+                            <div class="hero-stat-label">% довольных</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-num" data-count="7">0</div>
+                            <div class="hero-stat-label">Лет опыта</div>
+                        </div>
                     </div>
-                    <div class="card" style="flex: 1 1 200px; text-align: center;">
-                        <h3>Поддержка</h3>
-                        <p>Круглосуточная помощь</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-code-block">
+                        <div><span class="line-num">1</span><span class="keyword">const</span> <span class="func">createProject</span> = () =&gt; {</div>
+                        <div><span class="line-num">2</span>  <span class="keyword">const</span> idea = <span class="func">услышать</span>(<span class="string">клиент</span>);</div>
+                        <div><span class="line-num">3</span>  <span class="keyword">const</span> design = <span class="func">придумать</span>(idea);</div>
+                        <div><span class="line-num">4</span>  <span class="keyword">const</span> code = <span class="func">написать</span>(design);</div>
+                        <div><span class="line-num">5</span>  <span class="keyword">const</span> result = <span class="func">запустить</span>(code);</div>
+                        <div><span class="line-num">6</span>  <span class="keyword">return</span> <span class="string">🚀 успех</span>;</div>
+                        <div><span class="line-num">7</span>};<span class="cursor"></span></div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- ====== УСЛУГИ ====== -->
+        <section class="services-section">
+            <div class="container">
+                <h2 class="section-title reveal">Что мы <span>делаем</span></h2>
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-icon">🌐</div>
+                        <h3>Веб-разработка</h3>
+                        <p>Создаём современные сайты и веб-приложения с нуля. Адаптивный дизайн, быстрая загрузка, чистый код.</p>
+                        <a href="pages/services.html" class="learn-more">Подробнее →</a>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">📱</div>
+                        <h3>Мобильные приложения</h3>
+                        <p>Разрабатываем нативные и кроссплатформенные приложения для iOS и Android.</p>
+                        <a href="pages/services.html" class="learn-more">Подробнее →</a>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">⚙️</div>
+                        <h3>CRM-системы</h3>
+                        <p>Автоматизируем бизнес-процессы с помощью индивидуальных CRM-решений под ваши задачи.</p>
+                        <a href="pages/services.html" class="learn-more">Подробнее →</a>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">🎨</div>
+                        <h3>UI/UX Дизайн</h3>
+                        <p>Проектируем интерфейсы, которые нравятся пользователям и приносят результат бизнесу.</p>
+                        <a href="pages/services.html" class="learn-more">Подробнее →</a>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">🚀</div>
+                        <h3>Продвижение</h3>
+                        <p>SEO-оптимизация, контекстная реклама и аналитика для роста вашего бизнеса.</p>
+                        <a href="pages/services.html" class="learn-more">Подробнее →</a>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">🛡️</div>
+                        <h3>Поддержка</h3>
+                        <p>Техническая поддержка, обновления и мониторинг 24/7 после запуска проекта.</p>
+                        <a href="pages/services.html" class="learn-more">Подробнее →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== ПРОЦЕСС ====== -->
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title reveal">Как мы <span>работаем</span></h2>
+                <div class="process-steps">
+                    <div class="process-step reveal">
+                        <div class="step-number">01</div>
+                        <h3>Анализ</h3>
+                        <p>Изучаем вашу нишу, конкурентов и целевую аудиторию. Формируем техническое задание.</p>
+                    </div>
+                    <div class="process-step reveal">
+                        <div class="step-number">02</div>
+                        <h3>Дизайн</h3>
+                        <p>Проектируем пользовательский интерфейс. Создаём прототипы и утверждаем макеты.</p>
+                    </div>
+                    <div class="process-step reveal">
+                        <div class="step-number">03</div>
+                        <h3>Разработка</h3>
+                        <p>Пишем код, интегрируем системы. Каждый спринт — рабочий результат.</p>
+                    </div>
+                    <div class="process-step reveal">
+                        <div class="step-number">04</div>
+                        <h3>Запуск</h3>
+                        <p>Тестируем, оптимизируем и запускаем. Обучаем вашу команду работе с продуктом.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== КЕЙСЫ ====== -->
+        <section class="cases-section">
+            <div class="container">
+                <h2 class="section-title reveal">Наши <span>кейсы</span></h2>
+                <div class="cases-grid">
+                    <div class="case-card reveal">
+                        <div class="case-preview">🛒</div>
+                        <div class="case-info">
+                            <span class="case-tag">E-commerce</span>
+                            <h3>Интернет-магазин «ТехноШоп»</h3>
+                            <p>Полная разработка маркетплейса с личным кабинетом, оплатой и системой лояльности. +340% к продажам за 3 месяца.</p>
+                        </div>
+                    </div>
+                    <div class="case-card reveal">
+                        <div class="case-preview">📊</div>
+                        <div class="case-info">
+                            <span class="case-tag">CRM</span>
+                            <h3>CRM для «СтройДом»</h3>
+                            <p>Автоматизация воронки продаж для строительной компании. Экономия 20 часов в неделю на рутине.</p>
+                        </div>
+                    </div>
+                    <div class="case-card reveal">
+                        <div class="case-preview">🎓</div>
+                        <div class="case-info">
+                            <span class="case-tag">EdTech</span>
+                            <h3>Платформа «УчиПро»</h3>
+                            <p>Образовательная платформа с видеокурсами, тестами и сертификатами. 10 000+ студентов за первый год.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== ТЕХНОЛОГИИ ====== -->
+        <section class="tech-section">
+            <div class="container">
+                <h2 class="section-title reveal">Технологии, с которыми мы <span>работаем</span></h2>
+                <div class="tech-logos reveal">
+                    <span class="tech-logo">React</span>
+                    <span class="tech-logo">Node.js</span>
+                    <span class="tech-logo">Python</span>
+                    <span class="tech-logo">TypeScript</span>
+                    <span class="tech-logo">PostgreSQL</span>
+                    <span class="tech-logo">Docker</span>
+                    <span class="tech-logo">Figma</span>
+                    <span class="tech-logo">AWS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== ОТЗЫВЫ ====== -->
+        <section class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title reveal">Что говорят <span>клиенты</span></h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card reveal">
+                        <p class="testimonial-text">DevSolutions сделали нам CRM-систему за 2 месяца. Продажи выросли на 45%, команда наконец-то работает без хаоса. Рекомендую!</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">АК</div>
+                            <div>
+                                <div class="testimonial-name">Алексей Козлов</div>
+                                <div class="testimonial-role">Директор, «СтройДом»</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <p class="testimonial-text">Интернет-магазин получился именно таким, как мы мечтали. Поддержка на высшем уровне — любые вопросы решаются за часы, а не дни.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">МС</div>
+                            <div>
+                                <div class="testimonial-name">Мария Смирнова</div>
+                                <div class="testimonial-role">Основатель, «ТехноШоп»</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal">
+                        <p class="testimonial-text">Образовательная платформа превзошла наши ожидания. Студенты в восторге от интерфейса, а мы — от аналитики и скорости работы.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">ДВ</div>
+                            <div>
+                                <div class="testimonial-name">Дмитрий Волков</div>
+                                <div class="testimonial-role">CEO, «УчиПро»</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CTA ====== -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Готовы начать проект?</h2>
+                <p>Расскажите нам о своей идее — мы сделаем бесплатную оценку и предложим лучшее решение.</p>
+                <a href="pages/contacts.html" class="btn">Связаться с нами</a>
+            </div>
+        </section>
+
     </main>
 
     <!-- ====== ПОДВАЛ ====== -->
@@ -78,6 +264,61 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // ===== Particles =====
+        (function() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.top = Math.random() * 100 + '%';
+                p.style.animationDelay = Math.random() * 8 + 's';
+                p.style.animationDuration = (6 + Math.random() * 6) + 's';
+                p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
+                container.appendChild(p);
+            }
+        })();
+
+        // ===== Scroll reveal =====
+        (function() {
+            const els = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+            els.forEach(function(el) { observer.observe(el); });
+        })();
+
+        // ===== Counter animation =====
+        (function() {
+            const nums = document.querySelectorAll('[data-count]');
+            const obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.getAttribute('data-count'));
+                        let current = 0;
+                        const step = Math.ceil(target / 60);
+                        const timer = setInterval(function() {
+                            current += step;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            el.textContent = current;
+                        }, 25);
+                        obs.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            nums.forEach(function(n) { obs.observe(n); });
+        })();
+    </script>
 
 </body>
 </html>
