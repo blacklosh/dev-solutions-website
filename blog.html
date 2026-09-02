@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Блог — DevSolutions</title>
+
+    <!-- Подключаем общие стили (они сами подтянут variables.css) -->
+    <link rel="stylesheet" href="../css/common.css" />
+    <!-- Индивидуальные стили для страницы блога -->
+    <link rel="stylesheet" href="../css/page-blog.css" />
+  </head>
+  <body>
+    <!-- ====== ШАПКА (единая для всех) ====== -->
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">Dev<span>Solutions</span></div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="portfolio.html">Портфолио</a></li>
+            <li><a href="blog.html" class="active">Блог</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ====== ОСНОВНОЙ КОНТЕНТ ====== -->
+    <main>
+      <!-- Заголовок страницы -->
+      <section class="page-heading">
+        <div class="container">
+          <h1>Блог</h1>
+          <p>Новости, статьи и инсайты от команды DevSolutions</p>
+        </div>
+      </section>
+
+      <!-- Лента новостей -->
+      <section class="blog-list">
+        <div class="container">
+          <!-- Статья 1 -->
+          <article class="blog-card">
+            <img
+              src="../images/blog-1.jpg"
+              alt="Современный офис с ноутбуком"
+              class="blog-card__image"
+            />
+            <div class="blog-card__content">
+              <time class="blog-card__date" datetime="2026-08-20"
+                >20 августа 2026</time
+              >
+              <h2 class="blog-card__title">
+                <a href="blog-post.html"
+                  >Как мы автоматизировали процессы в крупной сети ресторанов</a
+                >
+              </h2>
+              <p class="blog-card__excerpt">
+                Внедрение CRM-системы помогло сократить время обработки заказов
+                на 40% и повысить лояльность клиентов. Делимся опытом и цифрами.
+              </p>
+              <a href="blog-post.html" class="blog-card__link"
+                >Читать далее →</a
+              >
+            </div>
+          </article>
+
+          <!-- Статья 2 -->
+          <article class="blog-card">
+            <img
+              src="../images/blog-2.jpg"
+              alt="Команда разработчиков за работой"
+              class="blog-card__image"
+            />
+            <div class="blog-card__content">
+              <time class="blog-card__date" datetime="2026-08-10"
+                >10 августа 2026</time
+              >
+              <h2 class="blog-card__title">
+                <a href="blog-post.html"
+                  >Почему мы выбрали React для нового проекта</a
+                >
+              </h2>
+              <p class="blog-card__excerpt">
+                Сравнение производительности, экосистемы и скорости разработки.
+                Рассказываем, как React помог нам ускорить вывод продукта на
+                рынок.
+              </p>
+              <a href="blog-post.html" class="blog-card__link"
+                >Читать далее →</a
+              >
+            </div>
+          </article>
+
+          <!-- Статья 3 -->
+          <article class="blog-card">
+            <img
+              src="../images/blog-3.jpg"
+              alt="Схема интеграции с API"
+              class="blog-card__image"
+            />
+            <div class="blog-card__content">
+              <time class="blog-card__date" datetime="2026-07-28"
+                >28 июля 2026</time
+              >
+              <h2 class="blog-card__title">
+                <a href="blog-post.html"
+                  >Интеграция с внешними API: лучшие практики</a
+                >
+              </h2>
+              <p class="blog-card__excerpt">
+                Как мы обеспечиваем надёжность и безопасность при подключении к
+                сторонним сервисам. Советы по обработке ошибок и кэшированию.
+              </p>
+              <a href="blog-post.html" class="blog-card__link"
+                >Читать далее →</a
+              >
+            </div>
+          </article>
+
+          <!-- Статья 4 -->
+          <article class="blog-card">
+            <img
+              src="../images/blog-4.jpg"
+              alt="Дизайн-макет мобильного приложения"
+              class="blog-card__image"
+            />
+            <div class="blog-card__content">
+              <time class="blog-card__date" datetime="2026-07-15"
+                >15 июля 2026</time
+              >
+              <h2 class="blog-card__title">
+                <a href="blog-post.html"
+                  >UI/UX тренды 2026: что важно для бизнеса</a
+                >
+              </h2>
+              <p class="blog-card__excerpt">
+                Обзор ключевых направлений в дизайне интерфейсов:
+                микро-анимация, тёмная тема, доступность и персонализация.
+              </p>
+              <a href="blog-post.html" class="blog-card__link"
+                >Читать далее →</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Пагинация (опционально) -->
+      <div class="pagination">
+        <div class="container">
+          <a href="#" class="pagination__prev">← Предыдущая</a>
+          <span class="pagination__current">Страница 1 из 3</span>
+          <a href="#" class="pagination__next">Следующая →</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- ====== ПОДВАЛ (единый для всех) ====== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-copy">
+            &copy; 2026 DevSolutions. Все права защищены.
+          </div>
+          <div class="footer-links">
+            <a href="about.html">О нас</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="#">Политика конфиденциальности</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
