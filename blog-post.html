@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevSolutions – Как мы создаём CRM-системы с нуля</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="page-blog-post.css" />
+</head>
+<body>
+
+    <!-- ====== ШАПКА ====== -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">Dev<span>Solutions</span></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="portfolio.html">Портфолио</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ====== ХЛЕБНЫЕ КРОШКИ ====== -->
+        <section class="breadcrumbs-section">
+            <div class="container">
+                <nav class="breadcrumbs">
+                    <a href="../index.html">Главная</a>
+                    <span class="sep">/</span>
+                    <a href="blog.html">Блог</a>
+                    <span class="sep">/</span>
+                    <span class="current">Как мы создаём CRM-системы с нуля</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- ====== СТАТЬЯ ====== -->
+        <article class="blog-post">
+            <div class="container">
+
+                <!-- Шапка статьи -->
+                <header class="post-header reveal">
+                    <div class="post-meta">
+                        <span class="post-category">Разработка</span>
+                        <span class="post-date">12 марта 2026</span>
+                        <span class="post-readtime">⏱ 7 мин чтения</span>
+                    </div>
+                    <h1 class="post-title">
+                        Как мы создаём <span>CRM-системы</span> с нуля: полный цикл разработки
+                    </h1>
+                    <p class="post-excerpt">
+                        От идеи до продакшена — рассказываем, как мы проектируем, разрабатываем и внедряем
+                        индивидуальные CRM-решения для бизнеса.
+                    </p>
+                    <div class="post-author">
+                        <div class="author-avatar">АП</div>
+                        <div class="author-info">
+                            <span class="author-name">ПАША КРОПОТОВ</span>
+                            <span class="author-role">Технический директор DevSolutions</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Основное содержимое -->
+                <div class="post-content reveal">
+
+                    <!-- Вступление -->
+                    <p class="lead">
+                        За последние 7 лет мы разработали более 40 CRM-систем для компаний из разных отраслей:
+                        строительство, логистика, образование, ритейл и финансы. В этой статье я расскажу,
+                        как устроен наш процесс — от первого брифа до передачи системы в эксплуатацию.
+                    </p>
+
+                    <h2>1. Погружение в бизнес-процессы</h2>
+                    <p>
+                        Мы не начинаем с кода. Первые 2–3 недели мы проводим в тесном общении с командой клиента.
+                        Наша цель — понять, как сейчас работает компания, где возникают «бутылочные горлышки»
+                        и какие процессы можно автоматизировать.
+                    </p>
+
+                    <!-- Цитата -->
+                    <blockquote class="post-quote">
+                        <p>
+                            «Лучшая CRM — та, которую сотрудники используют каждый день, а не та, которую им навязали сверху.»
+                        </p>
+                        <cite>— Алексей Петров, технический директор DevSolutions</cite>
+                    </blockquote>
+
+                    <p>
+                        На этом этапе мы составляем карту текущих бизнес-процессов, проводим интервью с ключевыми
+                        сотрудниками и собираем пожелания. Результат — <strong>детальное техническое задание</strong>,
+                        которое утверждается со стороны клиента.
+                    </p>
+
+                    <h2>2. Проектирование архитектуры</h2>
+                    <p>
+                        Когда требования согласованы, мы переходим к архитектуре. Здесь мы определяем:
+                    </p>
+
+                    <!-- Список -->
+                    <ul class="post-list">
+                        <li>Какую базу данных будем использовать (обычно PostgreSQL или MongoDB);</li>
+                        <li>Какой бэкенд-стек подойдёт лучше всего (Node.js, Python или .NET);</li>
+                        <li>Как будет устроена интеграция с внешними сервисами (1С, банки, маркетплейсы);</li>
+                        <li>Какой уровень безопасности и защиты данных требуется.</li>
+                    </ul>
+
+                    <p>
+                        На этом же этапе мы создаём <strong>прототип интерфейса</strong> — чтобы клиент мог увидеть,
+                        как будет выглядеть система до того, как мы напишем первую строку кода.
+                    </p>
+
+                    <!-- Изображение-заглушка (иллюстрация) -->
+                    <figure class="post-image">
+                        <div class="image-placeholder">
+                            <span>📊</span>
+                            <span class="image-label">Диаграмма архитектуры CRM-системы</span>
+                        </div>
+                        <figcaption>
+                            Пример архитектуры типовой CRM-системы с микросервисной структурой
+                        </figcaption>
+                    </figure>
+
+                    <h2>3. Разработка: спринты и демо</h2>
+                    <p>
+                        Мы работаем по <strong>Agile-методологии</strong> с двухнедельными спринтами.
+                        Каждый спринт заканчивается демонстрацией рабочего инкремента — клиент видит прогресс
+                        и может оперативно скорректировать требования.
+                    </p>
+
+                    <h3>3.1. Бэкенд: бизнес-логика и API</h3>
+                    <p>
+                        Бэкенд мы пишем на <strong>Node.js (NestJS)</strong> или <strong>Python (FastAPI)</strong>.
+                        Вся бизнес-логика покрывается автотестами. Мы используем REST API с документацией Swagger
+                        — это упрощает интеграцию с фронтендом и внешними системами.
+                    </p>
+
+                    <!-- Фрагмент кода -->
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-lang">TypeScript / NestJS</span>
+                            <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                        </div>
+                        <pre><code>
+                            @Injectable()
+                            export class OrderService {
+                            constructor(
+                            @InjectRepository(Order)
+                            private orderRepo: Repository&lt;Order&gt;,
+                            private notificationService: NotificationService,
+                            ) {}
+
+                            async createOrder(data: CreateOrderDto): Promise&lt;Order&gt; {
+                            // 1. Валидация данных
+                            this.validateOrderData(data);
+
+                            // 2. Создание заказа в БД
+                            const order = this.orderRepo.create(data);
+                            await this.orderRepo.save(order);
+
+                            // 3. Отправка уведомления
+                            await this.notificationService.notifyNewOrder(order);
+
+                            return order;
+                            }
+                            }
+                        </code></pre>
+                    </div>
+
+                    <h3>3.2. Фронтенд: удобный и быстрый интерфейс</h3>
+                    <p>
+                        Фронтенд мы строим на <strong>React + TypeScript</strong> с использованием
+                        компонентной библиотеки, которую адаптируем под бренд-стиль клиента.
+                        Особое внимание уделяем скорости загрузки и удобству работы с большими таблицами.
+                    </p>
+
+                    <p>
+                        Мы используем <strong>WebSocket</strong> для обновлений в реальном времени —
+                        чтобы менеджеры видели новые заявки и изменения статусов без перезагрузки страницы.
+                    </p>
+
+                    <h2>4. Интеграции и автоматизация</h2>
+                    <p>
+                        CRM становится по-настоящему сильной, когда она интегрирована с другими системами компании.
+                        Чаще всего мы настраиваем:
+                    </p>
+
+                    <!-- Список с иконками -->
+                    <ul class="post-list post-list-check">
+                        <li>Интеграцию с 1С для обмена данными по клиентам и документам;</li>
+                        <li>Подключение к платежным шлюзам (ЮKassa, CloudPayments);</li>
+                        <li>Автоматическую рассылку писем и SMS через Unisender или SMT;P;</li>
+                        <li>Интеграцию с телефонией для записи звонков и CTI-панели.</li>
+                    </ul>
+
+                    <h2>5. Тестирование и безопасность</h2>
+                    <p>
+                        Перед запуском система проходит многослойное тестирование:
+                    </p>
+
+                    <!-- Нумерованный список -->
+                    <ol class="post-list post-list-numbered">
+                        <li><strong>Юнит-тесты</strong> — проверка каждого компонента в изоляции;</li>
+                        <li><strong>Интеграционные тесты</strong> — проверка взаимодействия модулей;</li>
+                        <li><strong>UI-тесты</strong> — автоматизированная проверка интерфейса в браузере;</li>
+                        <li><strong>Нагрузочное тестирование</strong> — проверка системы под большой нагрузкой;</li>
+                        <li><strong>Тестирование безопасности</strong> — аудит кода и сканирование уязвимостей.</li>
+                    </ol>
+
+                    <h2>6. Внедрение и обучение</h2>
+                    <p>
+                        Мы не сдаём систему и уходим. Мы помогаем внедрить CRM в рабочие процессы:
+                        проводим обучение для сотрудников, создаём инструкции и видео-гайды.
+                        Первые 2–4 недели после запуска мы сопровождаем систему в боевом режиме,
+                        оперативно исправляя все замечания.
+                    </p>
+
+                    <blockquote class="post-quote">
+                        <p>
+                            «Самый важный этап — это привыкание. Если сотрудники не понимают, зачем им новая система,
+                            она не будет работать. Поэтому мы уделяем обучению не меньше времени, чем разработке.»
+                        </p>
+                        <cite>— Алексей Петров, технический директор DevSolutions</cite>
+                    </blockquote>
+
+                    <h2>Что дальше?</h2>
+                    <p>
+                        После запуска мы продолжаем поддерживать систему: обновляем версии, добавляем новые функции
+                        по мере роста бизнеса и мониторим производительность. Мы всегда на связи — и это
+                        <strong>ключевое преимущество</strong> работы с нами.
+                    </p>
+
+                    <p>
+                        Хотите обсудить свою CRM-систему? <a href="contacts.html" class="post-link">Свяжитесь с нами</a> —
+                        мы проведём бесплатный аудит ваших процессов и предложим решение.
+                    </p>
+
+                </div>
+
+                <!-- ====== ПОДПИСЬ / ШАРИНГ ====== -->
+                <div class="post-footer">
+                    <div class="post-tags">
+                        <span>🏷️</span>
+                        <a href="blog.html?tag=CRM" class="tag">CRM</a>
+                        <a href="blog.html?tag=Разработка" class="tag">Разработка</a>
+                        <a href="blog.html?tag=Бэкенд" class="tag">Бэкенд</a>
+                        <a href="blog.html?tag=Agile" class="tag">Agile</a>
+                    </div>
+                    <div class="post-share">
+                        <span>Поделиться:</span>
+                        <a href="#" class="share-btn">📘</a>
+                        <a href="#" class="share-btn">🐦</a>
+                        <a href="#" class="share-btn">🔗</a>
+                    </div>
+                </div>
+
+                <!-- ====== РЕКОМЕНДУЕМЫЕ СТАТЬИ ====== -->
+                <section class="related-posts">
+                    <h3 class="related-title">📚 Читайте также</h3>
+                    <div class="related-grid">
+                        <a href="#" class="related-card">
+                            <span class="related-category">Дизайн</span>
+                            <h4>Как мы проектируем интерфейсы для сложных бизнес-систем</h4>
+                            <span class="related-date">5 марта 2026</span>
+                        </a>
+                        <a href="#" class="related-card">
+                            <span class="related-category">Технологии</span>
+                            <h4>Почему мы выбрали NestJS для бэкенда: опыт 5 лет</h4>
+                            <span class="related-date">28 февраля 2026</span>
+                        </a>
+                        <a href="#" class="related-card">
+                            <span class="related-category">Управление</span>
+                            <h4>Scrum vs Kanban: что лучше для IT-проектов?</h4>
+                            <span class="related-date">18 февраля 2026</span>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </article>
+
+    </main>
+
+    <!-- ====== ПОДВАЛ ====== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-copy">
+                    &copy; 2026 DevSolutions. Все права защищены.
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">О нас</a>
+                    <a href="contacts.html">Контакты</a>
+                    <a href="#">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Scroll reveal =====
+        (function() {
+            const els = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.12 });
+            els.forEach(function(el) { observer.observe(el); });
+        })();
+
+        // ===== Копирование кода =====
+        function copyCode(btn) {
+            const block = btn.closest('.code-block');
+            const code = block.querySelector('code');
+            const text = code.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const original = btn.textContent;
+                btn.textContent = '✅ Скопировано!';
+                setTimeout(() => { btn.textContent = original; }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>

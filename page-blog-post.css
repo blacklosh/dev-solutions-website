@@ -1,0 +1,585 @@
+/* ============================================
+   СТИЛИ ДЛЯ СТРАНИЦЫ СТАТЬИ БЛОГА (blog-post.html)
+   Тёмно-синий + чёрный + жёлтый акцент
+   ============================================ */
+
+/* ---------- Импорт общих переменных ---------- */
+@import url('variables.css');
+
+/* ---------- Хлебные крошки ---------- */
+.breadcrumbs-section {
+    padding: 24px 0 8px;
+    background: var(--dark-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.breadcrumbs {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumbs a {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s;
+}
+
+.breadcrumbs a:hover {
+    color: var(--secondary-color);
+}
+
+.breadcrumbs .sep {
+    margin: 0 8px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.breadcrumbs .current {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* ---------- Статья ---------- */
+.blog-post {
+    padding: 50px 0 80px;
+    background: #0b121a;
+    color: #e8edf2;
+}
+
+.post-header {
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+}
+
+.post-category {
+    background: rgba(243, 156, 18, 0.15);
+    color: var(--secondary-color);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.post-date {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.post-readtime {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.post-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+.post-title span {
+    color: var(--secondary-color);
+}
+
+.post-excerpt {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 720px;
+    margin-bottom: 28px;
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.author-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.author-role {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ---------- Контент статьи ---------- */
+.post-content {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.post-content .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 36px;
+    padding: 20px 28px;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 4px solid var(--secondary-color);
+    border-radius: 0 8px 8px 0;
+}
+
+.post-content h2 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    margin: 48px 0 20px;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-light);
+}
+
+.post-content h2:first-of-type {
+    margin-top: 0;
+}
+
+.post-content h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 32px 0 16px;
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+}
+
+.post-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.post-content strong {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.post-content a.post-link {
+    color: var(--secondary-color);
+    font-weight: 600;
+    border-bottom: 1px solid rgba(243, 156, 18, 0.3);
+    transition: border-color 0.3s;
+}
+
+.post-content a.post-link:hover {
+    border-bottom-color: var(--secondary-color);
+}
+
+/* ---------- Цитаты ---------- */
+.post-quote {
+    margin: 36px 0 32px;
+    padding: 28px 36px;
+    background: rgba(243, 156, 18, 0.06);
+    border-left: 4px solid var(--secondary-color);
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+}
+
+.post-quote p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 8px;
+}
+
+.post-quote cite {
+    display: block;
+    font-size: 0.9rem;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 8px;
+}
+
+/* ---------- Списки ---------- */
+.post-list {
+    margin: 16px 0 28px;
+    padding-left: 24px;
+    list-style: none;
+}
+
+.post-list li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 6px 0 6px 28px;
+    position: relative;
+}
+
+.post-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.post-list-check li::before {
+    content: '✅';
+}
+
+.post-list-numbered {
+    counter-reset: item;
+    padding-left: 0;
+}
+
+.post-list-numbered li {
+    padding-left: 36px;
+    counter-increment: item;
+}
+
+.post-list-numbered li::before {
+    content: counter(item) '.';
+    color: var(--secondary-color);
+    font-weight: 700;
+    font-size: 1rem;
+    left: 0;
+}
+
+/* ---------- Изображение ---------- */
+.post-image {
+    margin: 36px 0 32px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(42, 92, 142, 0.3), rgba(243, 156, 18, 0.15));
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.image-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 400;
+}
+
+.post-image figcaption {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* ---------- Блок кода ---------- */
+.code-block {
+    margin: 32px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0d151f;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.code-lang {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.copy-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.copy-btn:hover {
+    background: rgba(243, 156, 18, 0.15);
+    color: var(--secondary-color);
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 24px 20px;
+    overflow-x: auto;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #d4dce6;
+}
+
+.code-block code {
+    font-family: inherit;
+    white-space: pre;
+}
+
+/* ---------- Подвал статьи ---------- */
+.post-footer {
+    max-width: 820px;
+    margin: 50px auto 0;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.post-tags .tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s;
+}
+
+.post-tags .tag:hover {
+    background: rgba(243, 156, 18, 0.15);
+    color: var(--secondary-color);
+}
+
+.post-share {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.share-btn:hover {
+    background: rgba(243, 156, 18, 0.15);
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* ---------- Рекомендуемые статьи ---------- */
+.related-posts {
+    max-width: 820px;
+    margin: 60px auto 0;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.related-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.related-card {
+    display: block;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.related-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-4px);
+    border-color: rgba(243, 156, 18, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.related-card .related-category {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.related-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.related-card .related-date {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Адаптив ---------- */
+@media (max-width: 768px) {
+    .blog-post {
+        padding: 30px 0 60px;
+    }
+
+    .post-header {
+        margin-bottom: 30px;
+        padding-bottom: 28px;
+    }
+
+    .post-title {
+        font-size: 1.8rem;
+    }
+
+    .post-excerpt {
+        font-size: 1rem;
+    }
+
+    .post-content .lead {
+        font-size: 1.05rem;
+        padding: 16px 20px;
+    }
+
+    .post-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .post-content h3 {
+        font-size: 1.15rem;
+    }
+
+    .post-content p {
+        font-size: 0.95rem;
+    }
+
+    .post-quote {
+        padding: 20px 24px;
+    }
+
+    .post-quote p {
+        font-size: 1rem;
+    }
+
+    .code-block pre {
+        font-size: 0.8rem;
+        padding: 16px;
+    }
+
+    .post-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-placeholder {
+        height: 160px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-title {
+        font-size: 1.5rem;
+    }
+
+    .post-meta {
+        font-size: 0.75rem;
+        gap: 10px;
+    }
+
+    .breadcrumbs {
+        font-size: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .code-block pre {
+        font-size: 0.7rem;
+        padding: 12px;
+    }
+
+    .post-quote {
+        padding: 16px 18px;
+    }
+}
