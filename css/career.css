@@ -1,0 +1,134 @@
+```css
+/* ============================================
+   Стили страницы "Карьера"
+   ============================================ */
+
+/* ---------- Приветственный блок ---------- */
+
+.career-intro {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.career-label {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.career-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.career-text {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+}
+
+/* ---------- Вакансии ---------- */
+
+.vacancies {
+    padding: 70px 0;
+}
+
+.vacancies-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.vacancy {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.vacancy h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.vacancy h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.vacancy ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.vacancy li {
+    margin-bottom: 7px;
+}
+
+.experience {
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* ---------- Форма резюме ---------- */
+
+.resume-section {
+    background-color: var(--light-bg);
+    padding: 70px 0;
+}
+
+.resume-text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.resume-form {
+    background-color: white;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.resume-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.resume-form input,
+.resume-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.resume-form textarea {
+    resize: vertical;
+}
+
+/* ---------- Адаптация под телефон ---------- */
+
+max-width: 700px {
+
+    .career-intro h1 {
+        font-size: 2rem;
+    }
+
+    .vacancies-list {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-form {
+        padding: 20px;
+    }
+}
+```

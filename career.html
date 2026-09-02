@@ -1,0 +1,266 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Карьера — DevSolutions</title>
+
+    <!-- Общие стили проекта -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <!-- Стили этой страницы -->
+    <link rel="stylesheet" href="../css/page-career.css">
+</head>
+
+<body>
+
+<!-- Шапка сайта -->
+<header class="site-header">
+    <div class="container">
+
+        <a href="../index.html" class="logo">
+            Dev<span>Solutions</span>
+        </a>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="about.html">О компании</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="portfolio.html">Портфолио</a></li>
+                <li><a href="blog.html">Блог</a></li>
+                <li><a href="career.html">Карьера</a></li>
+                <li><a href="team.html">Команда</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+    <!-- Приветственный блок -->
+    <section class="career-intro">
+        <div class="container">
+
+            <p class="career-label">DEV SOLUTIONS</p>
+
+            <h1>Карьера в DevSolutions</h1>
+
+            <p class="career-text">
+                Мы ищем талантливых людей, которые хотят создавать
+                современные IT-продукты вместе с нами.
+            </p>
+
+            <a href="#vacancies" class="btn btn-secondary">
+                Смотреть вакансии
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Вакансии -->
+    <section class="vacancies" id="vacancies">
+        <div class="container">
+
+            <h2 class="section-title">
+                Открытые <span>вакансии</span>
+            </h2>
+
+            <div class="vacancies-list">
+
+                <article class="vacancy">
+                    <h3>Frontend-разработчик</h3>
+
+                    <p>
+                        Создание удобных и современных интерфейсов
+                        для сайтов и веб-приложений.
+                    </p>
+
+                    <h4>Требования:</h4>
+                    <ul>
+                        <li>HTML и CSS</li>
+                        <li>JavaScript</li>
+                        <li>Базовое знание Git</li>
+                    </ul>
+
+                    <p class="experience">
+                        Опыт: от 1 года
+                    </p>
+
+                    <a href="#resume" class="btn">
+                        Откликнуться
+                    </a>
+                </article>
+
+                <article class="vacancy">
+                    <h3>Backend-разработчик</h3>
+
+                    <p>
+                        Разработка серверной части приложений
+                        и работа с базами данных.
+                    </p>
+
+                    <h4>Требования:</h4>
+                    <ul>
+                        <li>Python, PHP или Node.js</li>
+                        <li>Знание SQL</li>
+                        <li>Понимание REST API</li>
+                    </ul>
+
+                    <p class="experience">
+                        Опыт: от 2 лет
+                    </p>
+
+                    <a href="#resume" class="btn">
+                        Откликнуться
+                    </a>
+                </article>
+
+                <article class="vacancy">
+                    <h3>UI/UX-дизайнер</h3>
+
+                    <p>
+                        Создание красивых и понятных интерфейсов
+                        для цифровых продуктов.
+                    </p>
+                    <h4>Требования:</h4>
+                    <ul>
+                        <li>Figma</li>
+                        <li>Понимание UX</li>
+                        <li>Внимание к деталям</li>
+                    </ul>
+
+                    <p class="experience">
+                        Опыт: от 1 года
+                    </p>
+
+                    <a href="#resume" class="btn">
+                        Откликнуться
+                    </a>
+                </article>
+
+                <article class="vacancy">
+                    <h3>QA-инженер</h3>
+
+                    <p>
+                        Тестирование сайтов и приложений
+                        и поиск ошибок.
+                    </p>
+
+                    <h4>Требования:</h4>
+                    <ul>
+                        <li>Знание методов тестирования</li>
+                        <li>Внимательность</li>
+                        <li>Умение составлять тест-кейсы</li>
+                    </ul>
+
+                    <p class="experience">
+                        Опыт: от 1 года
+                    </p>
+
+                    <a href="#resume" class="btn">
+                        Откликнуться
+                    </a>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Форма резюме -->
+    <section class="resume-section" id="resume">
+        <div class="container">
+
+            <h2 class="section-title">
+                Отправить <span>резюме</span>
+            </h2>
+
+            <p class="resume-text">
+                Не нашли подходящую вакансию?
+                Отправьте нам своё резюме.
+            </p>
+
+            <form class="resume-form">
+
+                <label for="name">Ваше имя</label>
+                <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Введите имя"
+                        required
+                >
+
+                <label for="email">Email</label>
+                <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Введите email"
+                        required
+                >
+
+                <label for="position">Желаемая должность</label>
+                <input
+                        type="text"
+                        id="position"
+                        name="position"
+                        placeholder="Например, Frontend-разработчик"
+                >
+
+                <label for="message">Сопроводительное письмо</label>
+                <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Расскажите немного о себе"
+                ></textarea>
+
+                <label for="resume-file">Резюме</label>
+                <input
+                        type="file"
+                        id="resume-file"
+                        name="resume"
+                >
+
+                <button type="submit" class="btn btn-secondary">
+                    Отправить резюме
+                </button>
+
+            </form>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- Подвал -->
+<footer class="site-footer">
+    <div class="container">
+
+        <div class="footer-content">
+
+            <p class="footer-copy">
+                © 2026 DevSolutions
+            </p>
+
+            <div class="footer-links">
+                <a href="contacts.html">Контакты</a>
+                <a href="career.html">Карьера</a>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
+```
