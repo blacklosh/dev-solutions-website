@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        :root {
+            --font-main: 'Segoe UI', Roboto, system-ui, sans-serif;
+            --text-color: #1e1e2f;
+            --light-bg: #f8faff;
+            --primary-color: #2a6df4;
+            --secondary-color: #f5b342;
+            --dark-bg: #0f172a;
+            --text-light: #f0f4ff;
+            --container-width: 1200px;
+            --spacing-md: 20px;
+            --spacing-lg: 40px;
+            --spacing-xl: 60px;
+            --border-radius: 12px;
+            --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            justify-content: center;
+            margin-top: var(--spacing-md);
+        }
+        .stat-item {
+            flex: 1 1 180px;
+            text-align: center;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.2s;
+        }
+        .stat-item:hover {
+            transform: translateY(-4px);
+        }
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+        .about-text {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto var(--spacing-md);
+            text-align: center;
+        }
+        .mission-block {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--box-shadow);
+            margin: var(--spacing-md) 0;
+        }
+        .mission-block h3 {
+            color: var(--dark-bg);
+            margin-bottom: 8px;
+        }
+        .illustration-placeholder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #eef3ff, #d9e3f5);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg) var(--spacing-md);
+            min-height: 200px;
+            color: var(--dark-bg);
+            font-size: 1.2rem;
+            font-weight: 500;
+            box-shadow: var(--box-shadow);
+            margin: var(--spacing-md) 0;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .illustration-placeholder svg {
+            width: 60px;
+            height: 60px;
+            fill: var(--primary-color);
+        }
+        .flex-center {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-md);
+        }
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+        .footer-links a {
+            margin-left: var(--spacing-md);
+        }
+
+    </style>
+</head>
+
+<body style="background: linear-gradient(145deg, #0a0f1e 0%, #141e33 50%, #0a0f1e 100%); 
+             min-height: 100vh; 
+             color: var(--text-light);">
+
+    <header class="site-header" style="border-bottom: 4px solid var(--secondary-color);">
+        <div class="container">
+            <h1>
+            <div class="logo">
+                    Dev<span style="color: #f5b342;">Solutions</span>
+            </div>
+            </h1>
+            <nav class="main-nav">
+
+
+<ul>
+                    <li><a href="#" style="color: #f0f4ff;">Главная</a></li>
+                    <li><a href="#" style="color: #f0f4ff;">Услуги</a></li>
+                    <li><a href="#" style="color: #f0f4ff;">Проекты</a></li>
+                    <li><a href="#" style="color: #f0f4ff;">О компании</a></li>
+                    <li><a href="#" style="color: #f0f4ff;">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <h1 class="section-title" style="margin-top: var(--spacing-lg);">
+                О <span>компании</span>
+            </h1>
+
+            <div class="about-text">
+                <p style="margin-bottom: 12px;">
+                    <strong>DevSolutions</strong> — команда экспертов в области разработки программного обеспечения, 
+                    искусственного интеллекта и облачных решений. Мы создаём цифровые продукты, 
+                    которые помогают бизнесу расти и адаптироваться к вызовам современного рынка.
+                </p>
+                <p>
+                    Наша философия — сочетание технологического совершенства и человеческого подхода. 
+                    Мы ценим доверие клиентов и стремимся к долгосрочному партнёрству.
+                </p>
+            </div>
+
+            <div class="illustration-placeholder">
+                <svg viewBox="0 0 80 80" width="70" height="70" style="fill: var(--primary-color);">
+                    <circle cx="40" cy="30" r="14" />
+                    <rect x="20" y="48" width="40" height="12" rx="4" />
+                    <rect x="28" y="62" width="24" height="10" rx="3" />
+                    <circle cx="32" cy="30" r="3" fill="white" />
+                    <circle cx="48" cy="30" r="3" fill="white" />
+                    <path d="M34 38 Q40 44, 46 38" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" />
+                </svg>
+                <span style="font-size: 1.4rem;"> —  инновации, надёжность, результат</span>
+            </div>
+
+            <div class="mission-block" style="margin-top: var(--spacing-md);">
+                <h3 style="color: var(--primary-color);">🎯 Наша миссия</h3>
+                <p style="font-size: 1.05rem; color: #0a0f1e;">
+                    Сделать сложные технологии доступными и полезными для каждого бизнеса. 
+                    Мы верим, что качественный софт — это не роскошь, а инструмент для достижения целей.
+                </p>
+                <p style="margin-top: 6px; font-style: italic; color: #2c3e66;">
+                    «Технологии с человеческим лицом»
+                </p>
+            </div>
+
+            <h2 class="section-title" style="font-size: 1.8rem; margin-top: var(--spacing-lg);">
+                <span>Достижения</span> в цифрах
+            </h2>
+
+            <div class="stats-grid">
+                <div class="stat-item card" style="box-shadow: var(--box-shadow);">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">лет на рынке</div>
+                </div>
+                <div class="stat-item card" style="box-shadow: var(--box-shadow);">
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">реализованных проектов</div>
+                </div>
+                <div class="stat-item card" style="box-shadow: var(--box-shadow);">
+                    <div class="stat-number">47</div>
+                    <div class="stat-label">специалистов в команде</div>
+                </div>
+
+<div class="stat-item card" style="box-shadow: var(--box-shadow);">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">удовлетворённых клиентов</div>
+                </div>
+                <div class="stat-item card" style="box-shadow: var(--box-shadow);">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">стран-партнёров</div>
+                </div>
+            </div>
+
+            <div style="margin: var(--spacing-lg)
+
+
+0;">
+                <h3 style="text-align: center; font-size: 1.6rem; margin-bottom: var(--spacing-md); color: var(--secondary-color);">
+                    Наши <span style="color: var(--secondary-color);">ценности</span>
+                </h3>
+                <div class="flex-center">
+                    <div class="card" style="flex: 1 1 200px; text-align: center;">
+                        <div style="font-size: 2.2rem;">🔹</div>
+                        <h4>Качество</h4>
+                        <p style="font-size: 0.95rem;">Код и архитектура мирового уровня</p>
+                    </div>
+                    <div class="card" style="flex: 1 1 200px; text-align: center;">
+                        <div style="font-size: 2.2rem;">🔸</div>
+                        <h4>Прозрачность</h4>
+                        <p style="font-size: 0.95rem;">Честные сроки и открытая коммуникация</p>
+                    </div>
+                    <div class="card" style="flex: 1 1 200px; text-align: center;">
+                        <div style="font-size: 2.2rem;">🔹</div>
+                        <h4>Инновации</h4>
+                        <p style="font-size: 0.95rem;">Внедряем передовые технологии</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: var(--spacing-xl) 0 var(--spacing-lg);">
+                <a href="#" class="btn btn-secondary" style="font-size: 1.1rem; padding: 14px 44px; color: white;">
+                    Обсудить проект
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-copy">
+                    &copy; 2026 DevSolutions — все права защищены.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Вакансии</a>
+                    <a href="#">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
