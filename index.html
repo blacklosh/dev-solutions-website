@@ -293,16 +293,52 @@
     </footer>
 
     <!-- ====== СКРИМЕР ====== -->
-    <div id="screamer-overlay" style="display:none;position:fixed;inset:0;z-index:99999;background:#000;justify-content:center;align-items:center;cursor:none;">
-        <div id="screamer-face" style="font-size:30vw;color:#fff;text-align:center;line-height:1;animation:screamerShake 0.08s infinite alternate;">
-            <div style="font-size:25vw;">😱</div>
-            <div style="font-size:4vw;font-weight:900;color:#ff0000;font-family:Arial;margin-top:20px;text-shadow:0 0 30px #ff0000;">АААААА!!!</div>
+    <div id="screamer-overlay" style="display:none;position:fixed;inset:0;z-index:99999;background:#000;justify-content:center;align-items:center;cursor:none;flex-direction:column;overflow:hidden;">
+        <div id="screamer-bg" style="position:absolute;inset:0;"></div>
+        <div id="screamer-face" style="position:relative;z-index:2;text-align:center;animation:screamerShake 0.05s infinite alternate;">
+            <div style="font-size:25vw;line-height:1;animation:screamerSpin 0.3s linear infinite;">😱</div>
+            <div style="font-size:5vw;font-weight:900;color:#ff0000;font-family:Arial;margin-top:10px;text-shadow:0 0 40px #ff0000, 0 0 80px #ff0000;animation:screamerBlink 0.1s infinite;">АААААА!!!</div>
         </div>
+        <div id="screamer-emojis" style="position:absolute;inset:0;z-index:1;pointer-events:none;"></div>
     </div>
     <style>
         @keyframes screamerShake {
-            from { transform: translate(-3px, -2px) rotate(-1deg); }
-            to { transform: translate(3px, 2px) rotate(1deg); }
+            from { transform: translate(-8px, -6px) rotate(-3deg) scale(1.05); }
+            to { transform: translate(8px, 6px) rotate(3deg) scale(0.95); }
+        }
+        @keyframes screamerSpin {
+            from { transform: rotate(0deg) scale(1); }
+            to { transform: rotate(360deg) scale(1.2); }
+        }
+        @keyframes screamerBlink {
+            0%, 49% { opacity: 1; color: #ff0000; }
+            50%, 100% { opacity: 0.3; color: #00ff00; }
+        }
+        @keyframes screamerFlash {
+            0% { background: #ff0000; }
+            16% { background: #00ff00; }
+            33% { background: #0000ff; }
+            50% { background: #ff00ff; }
+            66% { background: #ffff00; }
+            83% { background: #00ffff; }
+            100% { background: #ff0000; }
+        }
+        @keyframes screamerBgGlitch {
+            0% { background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,0,0,0.3) 2px, rgba(255,0,0,0.3) 4px); }
+            25% { background: repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,255,0,0.3) 2px, rgba(0,255,0,0.3) 4px); }
+            50% { background: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(0,0,255,0.3) 3px, rgba(0,0,255,0.3) 6px); }
+            75% { background: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(255,0,255,0.3) 2px, rgba(255,0,255,0.3) 4px); }
+            100% { background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,0,0,0.3) 2px, rgba(255,0,0,0.3) 4px); }
+        }
+        @keyframes screamerFly {
+            0% { transform: translateY(110vh) rotate(0deg) scale(2); opacity: 1; }
+            100% { transform: translateY(-20vh) rotate(720deg) scale(0.5); opacity: 0; }
+        }
+        .screamer-emoji-fly {
+            position: absolute;
+            font-size: 5vw;
+            animation: screamerFly 1s linear forwards;
+            pointer-events: none;
         }
     </style>
 
@@ -441,22 +477,65 @@
                 triggered = true;
                 e.preventDefault();
                 var overlay = document.getElementById('screamer-overlay');
+                var bg = document.getElementById('screamer-bg');
+                var emojisContainer = document.getElementById('screamer-emojis');
                 overlay.style.display = 'flex';
+
+                // Фон - глитч
+                bg.style.animation = 'screamerBgGlitch 0.1s infinite, screamerFlash 0.15s infinite';
+
+                // Летающие эмодзи
+                var emojiList = ['💀','👻','👹','🤡','🔪','🕷️','😈','殒','🎃','👻'];
+                for (var i = 0; i < 30; i++) {
+                    (function(idx) {
+                        setTimeout(function() {
+                            var span = document.createElement('span');
+                            span.className = 'screamer-emoji-fly';
+                            span.textContent = emojiList[idx % emojiList.length];
+                            span.style.left = Math.random() * 100 + '%';
+                            span.style.animationDuration = (0.5 + Math.random() * 1) + 's';
+                            emojisContainer.appendChild(span);
+                            setTimeout(function() { span.remove(); }, 2000);
+                        }, idx * 80);
+                    })(i);
+                }
+
+                // Множественные звуки
                 try {
                     var ctx = new (window.AudioContext || window.webkitAudioContext)();
-                    var osc = ctx.createOscillator();
-                    var gain = ctx.createGain();
-                    osc.connect(gain);
-                    gain.connect(ctx.destination);
-                    osc.type = 'sawtooth';
-                    osc.frequency.setValueAtTime(800, ctx.currentTime);
-                    osc.frequency.exponentialRampToValueAtTime(2000, ctx.currentTime + 0.1);
-                    osc.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + 0.5);
-                    gain.gain.setValueAtTime(0.8, ctx.currentTime);
-                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1.5);
-                    osc.start(ctx.currentTime);
-                    osc.stop(ctx.currentTime + 1.5);
+                    function playNoise(startTime, freq, dur) {
+                        var osc = ctx.createOscillator();
+                        var gain = ctx.createGain();
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.type = 'sawtooth';
+                        osc.frequency.setValueAtTime(freq, startTime);
+                        osc.frequency.exponentialRampToValueAtTime(freq * 2.5, startTime + 0.08);
+                        osc.frequency.exponentialRampToValueAtTime(freq * 0.5, startTime + dur);
+                        gain.gain.setValueAtTime(0.7, startTime);
+                        gain.gain.exponentialRampToValueAtTime(0.01, startTime + dur);
+                        osc.start(startTime);
+                        osc.stop(startTime + dur);
+                    }
+                    // Серия криков
+                    var t = ctx.currentTime;
+                    for (var s = 0; s < 6; s++) {
+                        playNoise(t + s * 0.25, 600 + Math.random() * 800, 0.3);
+                    }
+                    // Низкий гул
+                    var sub = ctx.createOscillator();
+                    var subGain = ctx.createGain();
+                    sub.connect(subGain);
+                    subGain.connect(ctx.destination);
+                    sub.type = 'square';
+                    sub.frequency.setValueAtTime(80, t);
+                    subGain.gain.setValueAtTime(0.4, t);
+                    subGain.gain.exponentialRampToValueAtTime(0.01, t + 2);
+                    sub.start(t);
+                    sub.stop(t + 2);
                 } catch(err) {}
+
+                // Скрыть через 3 секунды
                 setTimeout(function() { overlay.style.display = 'none'; }, 3000);
             }
             document.querySelectorAll('a, button, .btn, .service-card, .case-card, .tech-logo').forEach(function(el) {
