@@ -1,0 +1,178 @@
+/* ============================================
+   ОБЩИЕ СТИЛИ – сброс, шапка, подвал, переиспользуемые компоненты
+   ============================================ */
+
+/* Подключаем переменные */
+@import url('variables.css');
+
+/* ---------- Сброс и базовые стили ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---------- Контейнер ---------- */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ---------- Шапка (единая для всех) ---------- */
+.site-header {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: var(--spacing-md) 0;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    color: var(--text-light);
+    font-weight: 500;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.main-nav a:hover {
+    border-bottom-color: var(--secondary-color);
+}
+
+/* ---------- Подвал (единый для всех) ---------- */
+.site-footer {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xl);
+    border-top: 3px solid var(--secondary-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    margin-left: var(--spacing-md);
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* ---------- Переиспользуемые компоненты ---------- */
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: #000;
+}
+
+.btn-secondary:hover {
+    background-color: #e08e0b;
+}
+
+/* Карточки (базовый стиль) */
+.card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: var(--spacing-md);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Заголовки секций */
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--dark-bg);
+    text-align: center;
+}
+
+.section-title span {
+    color: var(--secondary-color);
+}

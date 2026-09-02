@@ -1,0 +1,23 @@
+:root {
+    /* Цвета */
+    --primary-color: #2A5C8E;      /* Основной синий */
+    --secondary-color: #F39C12;    /* Акцентный жёлтый */
+    --dark-bg: #1E2A3A;            /* Тёмный фон (шапка, подвал) */
+    --light-bg: #F4F6F9;           /* Светлый фон для секций */
+    --text-color: #333333;         /* Основной цвет текста */
+    --text-light: #FFFFFF;         /* Белый текст */
+
+    /* Шрифты */
+    --font-main: 'Roboto', 'Arial', sans-serif;
+
+    /* Размеры и отступы */
+    --container-width: 1140px;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    /* Отступы */
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
+}
