@@ -12,6 +12,9 @@
 </head>
 <body>
 
+    <!-- Кастомный курсор -->
+    <div class="custom-cursor" id="cursor"></div>
+
     <!-- ====== ШАПКА ====== -->
     <header class="site-header">
         <div class="container">
@@ -33,17 +36,17 @@
 
         <!-- ====== HERO ====== -->
         <section class="hero">
-            <div class="hero-grid"></div>
+            <div class="hero-grid" id="heroGrid"></div>
             <div class="hero-particles" id="particles"></div>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-badge">IT-студия полного цикла</div>
-                    <h1>Создаём <span class="highlight">цифровые продукты</span>, которые работают</h1>
+                    <h1>Создаём <span class="highlight" id="typed"></span>, которые работают</h1>
                     <p class="hero-desc">
                         Разрабатываем сайты, веб-приложения и CRM-системы под ключ. От идеи до запуска — берём на себя весь процесс.
                     </p>
                     <div class="hero-actions">
-                        <a href="pages/contacts.html" class="btn btn-primary">Обсудить проект</a>
+                        <a href="pages/contacts.html" class="btn btn-primary btn-shake">Обсудить проект</a>
                         <a href="pages/portfolio.html" class="btn btn-ghost">Смотреть кейсы →</a>
                     </div>
                     <div class="hero-stats">
@@ -64,6 +67,33 @@
             </div>
         </section>
 
+        <!-- ====== БЕГУЩАЯ СТРОКА ====== -->
+        <div class="marquee-section">
+            <div class="marquee-track">
+                <div class="marquee-item"><span class="dot"></span>React</div>
+                <div class="marquee-item"><span class="dot"></span>Node.js</div>
+                <div class="marquee-item"><span class="dot"></span>Python</div>
+                <div class="marquee-item"><span class="dot"></span>TypeScript</div>
+                <div class="marquee-item"><span class="dot"></span>PostgreSQL</div>
+                <div class="marquee-item"><span class="dot"></span>Docker</div>
+                <div class="marquee-item"><span class="dot"></span>Figma</div>
+                <div class="marquee-item"><span class="dot"></span>AWS</div>
+                <div class="marquee-item"><span class="dot"></span>Flutter</div>
+                <div class="marquee-item"><span class="dot"></span>Go</div>
+                <!-- Дубликат для бесконечного скролла -->
+                <div class="marquee-item"><span class="dot"></span>React</div>
+                <div class="marquee-item"><span class="dot"></span>Node.js</div>
+                <div class="marquee-item"><span class="dot"></span>Python</div>
+                <div class="marquee-item"><span class="dot"></span>TypeScript</div>
+                <div class="marquee-item"><span class="dot"></span>PostgreSQL</div>
+                <div class="marquee-item"><span class="dot"></span>Docker</div>
+                <div class="marquee-item"><span class="dot"></span>Figma</div>
+                <div class="marquee-item"><span class="dot"></span>AWS</div>
+                <div class="marquee-item"><span class="dot"></span>Flutter</div>
+                <div class="marquee-item"><span class="dot"></span>Go</div>
+            </div>
+        </div>
+
         <!-- ====== УСЛУГИ ====== -->
         <section class="services-section">
             <div class="container">
@@ -72,42 +102,44 @@
                     <div class="service-card reveal">
                         <div class="service-icon">🌐</div>
                         <h3>Веб-разработка</h3>
-                        <p>Создаём современные сайты и веб-приложения с нуля. Адаптивный дизайн, быстрая загрузка, чистый код.</p>
+                        <p>Современные сайты и веб-приложения. Адаптивный дизайн, быстрая загрузка, чистый код.</p>
                         <a href="pages/services.html" class="learn-more">Подробнее →</a>
                     </div>
                     <div class="service-card reveal">
                         <div class="service-icon">📱</div>
                         <h3>Мобильные приложения</h3>
-                        <p>Разрабатываем нативные и кроссплатформенные приложения для iOS и Android.</p>
+                        <p>Нативные и кроссплатформенные приложения для iOS и Android.</p>
                         <a href="pages/services.html" class="learn-more">Подробнее →</a>
                     </div>
                     <div class="service-card reveal">
                         <div class="service-icon">⚙️</div>
                         <h3>CRM-системы</h3>
-                        <p>Автоматизируем бизнес-процессы с помощью индивидуальных CRM-решений под ваши задачи.</p>
+                        <p>Автоматизация бизнес-процессов с индивидуальными CRM-решениями.</p>
                         <a href="pages/services.html" class="learn-more">Подробнее →</a>
                     </div>
                     <div class="service-card reveal">
                         <div class="service-icon">🎨</div>
                         <h3>UI/UX Дизайн</h3>
-                        <p>Проектируем интерфейсы, которые нравятся пользователям и приносят результат бизнесу.</p>
+                        <p>Интерфейсы, которые нравятся пользователям и приносят результат.</p>
                         <a href="pages/services.html" class="learn-more">Подробнее →</a>
                     </div>
                     <div class="service-card reveal">
                         <div class="service-icon">🚀</div>
                         <h3>Продвижение</h3>
-                        <p>SEO-оптимизация, контекстная реклама и аналитика для роста вашего бизнеса.</p>
+                        <p>SEO, контекстная реклама и аналитика для роста бизнеса.</p>
                         <a href="pages/services.html" class="learn-more">Подробнее →</a>
                     </div>
                     <div class="service-card reveal">
                         <div class="service-icon">🛡️</div>
                         <h3>Поддержка</h3>
-                        <p>Техническая поддержка, обновления и мониторинг 24/7 после запуска проекта.</p>
+                        <p>Техническая поддержка и мониторинг 24/7 после запуска.</p>
                         <a href="pages/services.html" class="learn-more">Подробнее →</a>
                     </div>
                 </div>
             </div>
         </section>
+
+        <div class="divider"></div>
 
         <!-- ====== ПРОЦЕСС ====== -->
         <section class="process-section">
@@ -117,26 +149,28 @@
                     <div class="process-step reveal">
                         <div class="step-number">01</div>
                         <h3>Анализ</h3>
-                        <p>Изучаем вашу нишу, конкурентов и целевую аудиторию. Формируем техническое задание.</p>
+                        <p>Изучаем нишу, конкурентов и ЦА. Формируем ТЗ.</p>
                     </div>
                     <div class="process-step reveal">
                         <div class="step-number">02</div>
                         <h3>Дизайн</h3>
-                        <p>Проектируем пользовательский интерфейс. Создаём прототипы и утверждаем макеты.</p>
+                        <p>Прототипы, макеты, согласование с вами.</p>
                     </div>
                     <div class="process-step reveal">
                         <div class="step-number">03</div>
                         <h3>Разработка</h3>
-                        <p>Пишем код, интегрируем системы. Каждый спринт — рабочий результат.</p>
+                        <p>Пишем код спринтами. Демо каждую неделю.</p>
                     </div>
                     <div class="process-step reveal">
                         <div class="step-number">04</div>
                         <h3>Запуск</h3>
-                        <p>Тестируем, оптимизируем и запускаем. Обучаем вашу команду работе с продуктом.</p>
+                        <p>Тесты, деплой, обучение команды.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <div class="divider"></div>
 
         <!-- ====== КЕЙСЫ ====== -->
         <section class="cases-section">
@@ -148,7 +182,7 @@
                         <div class="case-info">
                             <span class="case-tag">E-commerce</span>
                             <h3>Интернет-магазин «ТехноШоп»</h3>
-                            <p>Полная разработка маркетплейса с личным кабинетом, оплатой и системой лояльности. +340% к продажам за 3 месяца.</p>
+                            <p>Маркетплейс с личным кабинетом. +340% к продажам за квартал.</p>
                         </div>
                     </div>
                     <div class="case-card reveal">
@@ -156,7 +190,7 @@
                         <div class="case-info">
                             <span class="case-tag">CRM</span>
                             <h3>CRM для «СтройДом»</h3>
-                            <p>Автоматизация воронки продаж для строительной компании. Экономия 20 часов в неделю на рутине.</p>
+                            <p>Автоматизация воронки продаж. Экономия 20 часов в неделю.</p>
                         </div>
                     </div>
                     <div class="case-card reveal">
@@ -164,7 +198,7 @@
                         <div class="case-info">
                             <span class="case-tag">EdTech</span>
                             <h3>Платформа «УчиПро»</h3>
-                            <p>Образовательная платформа с видеокурсами, тестами и сертификатами. 10 000+ студентов за первый год.</p>
+                            <p>Образовательная платформа. 10 000+ студентов за год.</p>
                         </div>
                     </div>
                 </div>
@@ -174,7 +208,7 @@
         <!-- ====== ТЕХНОЛОГИИ ====== -->
         <section class="tech-section">
             <div class="container">
-                <h2 class="section-title reveal">Технологии, с которыми мы <span>работаем</span></h2>
+                <h2 class="section-title reveal">Стек <span>технологий</span></h2>
                 <div class="tech-logos reveal">
                     <span class="tech-logo">React</span>
                     <span class="tech-logo">Node.js</span>
@@ -184,9 +218,13 @@
                     <span class="tech-logo">Docker</span>
                     <span class="tech-logo">Figma</span>
                     <span class="tech-logo">AWS</span>
+                    <span class="tech-logo">Flutter</span>
+                    <span class="tech-logo">Go</span>
                 </div>
             </div>
         </section>
+
+        <div class="divider"></div>
 
         <!-- ====== ОТЗЫВЫ ====== -->
         <section class="testimonials-section">
@@ -194,7 +232,7 @@
                 <h2 class="section-title reveal">Что говорят <span>клиенты</span></h2>
                 <div class="testimonials-grid">
                     <div class="testimonial-card reveal">
-                        <p class="testimonial-text">DevSolutions сделали нам CRM-систему за 2 месяца. Продажи выросли на 45%, команда наконец-то работает без хаоса. Рекомендую!</p>
+                        <p class="testimonial-text">DevSolutions сделали нам CRM за 2 месяца. Продажи выросли на 45%, команда работает без хаоса.</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">АК</div>
                             <div>
@@ -204,7 +242,7 @@
                         </div>
                     </div>
                     <div class="testimonial-card reveal">
-                        <p class="testimonial-text">Интернет-магазин получился именно таким, как мы мечтали. Поддержка на высшем уровне — любые вопросы решаются за часы, а не дни.</p>
+                        <p class="testimonial-text">Магазин получился именно таким, как мечтали. Поддержка на высшем уровне — вопросы решаются за минуты.</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">МС</div>
                             <div>
@@ -214,7 +252,7 @@
                         </div>
                     </div>
                     <div class="testimonial-card reveal">
-                        <p class="testimonial-text">Образовательная платформа превзошла наши ожидания. Студенты в восторге от интерфейса, а мы — от аналитики и скорости работы.</p>
+                        <p class="testimonial-text">Платформа превзошла ожидания. Студенты в восторге от интерфейса, мы — от аналитики.</p>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">ДВ</div>
                             <div>
@@ -231,8 +269,8 @@
         <section class="cta-section">
             <div class="cta-content">
                 <h2>Готовы начать проект?</h2>
-                <p>Расскажите нам о своей идее — мы сделаем бесплатную оценку и предложим лучшее решение.</p>
-                <a href="pages/contacts.html" class="btn">Связаться с нами</a>
+                <p>Расскажите нам о своей идее — бесплатная оценка и лучшее решение.</p>
+                <a href="pages/contacts.html" class="btn btn-shake">Связаться с нами</a>
             </div>
         </section>
 
@@ -255,11 +293,71 @@
     </footer>
 
     <script>
+        // ===== Кастомный курсор =====
+        (function() {
+            var cursor = document.getElementById('cursor');
+            if (!cursor || window.innerWidth < 768) return;
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX - 8 + 'px';
+                cursor.style.top = e.clientY - 8 + 'px';
+            });
+            var hoverEls = document.querySelectorAll('a, button, .service-card, .case-card, .tech-logo, .btn');
+            hoverEls.forEach(function(el) {
+                el.addEventListener('mouseenter', function() { cursor.classList.add('hover'); });
+                el.addEventListener('mouseleave', function() { cursor.classList.remove('hover'); });
+            });
+        })();
+
+        // ===== Параллакс =====
+        (function() {
+            var grid = document.getElementById('heroGrid');
+            if (!grid) return;
+            window.addEventListener('scroll', function() {
+                var y = window.scrollY;
+                grid.style.transform = 'translateY(' + (y * 0.3) + 'px)';
+            });
+        })();
+
+        // ===== Печатание текста =====
+        (function() {
+            var el = document.getElementById('typed');
+            if (!el) return;
+            var words = ['цифровые продукты', 'сайты', 'приложения', 'CRM-системы'];
+            var wordIdx = 0;
+            var charIdx = 0;
+            var deleting = false;
+
+            function type() {
+                var current = words[wordIdx];
+                if (!deleting) {
+                    el.textContent = current.substring(0, charIdx + 1);
+                    charIdx++;
+                    if (charIdx === current.length) {
+                        setTimeout(function() { deleting = true; type(); }, 2000);
+                        return;
+                    }
+                    setTimeout(type, 80);
+                } else {
+                    el.textContent = current.substring(0, charIdx - 1);
+                    charIdx--;
+                    if (charIdx === 0) {
+                        deleting = false;
+                        wordIdx = (wordIdx + 1) % words.length;
+                        setTimeout(type, 400);
+                        return;
+                    }
+                    setTimeout(type, 40);
+                }
+            }
+            type();
+        })();
+
         // ===== Particles =====
         (function() {
-            const container = document.getElementById('particles');
-            for (let i = 0; i < 30; i++) {
-                const p = document.createElement('div');
+            var container = document.getElementById('particles');
+            if (!container) return;
+            for (var i = 0; i < 20; i++) {
+                var p = document.createElement('div');
                 p.className = 'particle';
                 p.style.left = Math.random() * 100 + '%';
                 p.style.top = Math.random() * 100 + '%';
@@ -272,8 +370,8 @@
 
         // ===== Scroll reveal =====
         (function() {
-            const els = document.querySelectorAll('.reveal');
-            const observer = new IntersectionObserver(function(entries) {
+            var els = document.querySelectorAll('.reveal');
+            var observer = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
@@ -283,29 +381,43 @@
             els.forEach(function(el) { observer.observe(el); });
         })();
 
-        // ===== Counter animation =====
+        // ===== Counter =====
         (function() {
-            const nums = document.querySelectorAll('[data-count]');
-            const obs = new IntersectionObserver(function(entries) {
+            var nums = document.querySelectorAll('[data-count]');
+            var obs = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const target = parseInt(el.getAttribute('data-count'));
-                        let current = 0;
-                        const step = Math.ceil(target / 60);
-                        const timer = setInterval(function() {
+                        var el = entry.target;
+                        var target = parseInt(el.getAttribute('data-count'));
+                        var current = 0;
+                        var step = Math.ceil(target / 50);
+                        var timer = setInterval(function() {
                             current += step;
                             if (current >= target) {
                                 current = target;
                                 clearInterval(timer);
                             }
                             el.textContent = current;
-                        }, 25);
+                        }, 30);
                         obs.unobserve(el);
                     }
                 });
             }, { threshold: 0.5 });
             nums.forEach(function(n) { obs.observe(n); });
+        })();
+
+        // ===== Glow на карточках услуг =====
+        (function() {
+            var cards = document.querySelectorAll('.service-card');
+            cards.forEach(function(card) {
+                card.addEventListener('mousemove', function(e) {
+                    var rect = card.getBoundingClientRect();
+                    var x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+                    var y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+                    card.style.setProperty('--mouse-x', x + '%');
+                    card.style.setProperty('--mouse-y', y + '%');
+                });
+            });
         })();
     </script>
 
