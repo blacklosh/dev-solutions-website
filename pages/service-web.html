@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разработка сайтов — IT-Студия</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/page-service-web.css">
+</head>
+<body>
+    <!-- ====== ШАПКА ====== -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">IT<span>Студия</span></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="portfolio.html">Портфолио</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ====== ОСНОВНОЙ КОНТЕНТ ====== -->
+    <main>
+        <!-- ГЕРОЙ (используем стандартный card) -->
+        <section class="service-hero">
+            <div class="container">
+                <div class="card" style="padding: 60px; text-align: center; background: var(--primary-color); color: white;">
+                    <h1 style="font-size: 48px; margin-bottom: 16px;">Разработка сайтов</h1>
+                    <p style="font-size: 20px; opacity: 0.9;">Создаём современные, быстрые и продающие сайты под ключ</p>
+                    <a href="#pricing" class="btn btn-secondary" style="margin-top: 20px;">Узнать стоимость</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ЭТАПЫ РАБОТ -->
+        <section class="service-stages">
+            <div class="container">
+                <h2 class="section-title">Этапы <span>работы</span></h2>
+                <div class="stages-grid">
+                    <div class="card stage-item">
+                        <span class="stage-number">01</span>
+                        <h3>Анализ</h3>
+                        <p>Изучаем ваш бизнес, конкурентов и целевую аудиторию</p>
+                    </div>
+                    <div class="card stage-item">
+                        <span class="stage-number">02</span>
+                        <h3>Прототип</h3>
+                        <p>Создаём структуру и прототип будущего сайта</p>
+                    </div>
+                    <div class="card stage-item">
+                        <span class="stage-number">03</span>
+                        <h3>Дизайн</h3>
+                        <p>Разрабатываем уникальный дизайн под ваш бренд</p>
+                    </div>
+                    <div class="card stage-item">
+                        <span class="stage-number">04</span>
+                        <h3>Вёрстка</h3>
+                        <p>Адаптивная вёрстка под все устройства</p>
+                    </div>
+                    <div class="card stage-item">
+                        <span class="stage-number">05</span>
+                        <h3>Тестирование</h3>
+                        <p>Проверяем работу на всех браузерах и устройствах</p>
+                    </div>
+                    <div class="card stage-item">
+                        <span class="stage-number">06</span>
+                        <h3>Запуск</h3>
+                        <p>Размещаем на хостинге и передаём ключи</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ТЕХНОЛОГИИ -->
+        <section class="service-tech" style="background: var(--light-bg); padding: 60px 0;">
+            <div class="container">
+                <h2 class="section-title">Технологии</h2>
+                <div class="tech-list">
+                    <span class="btn" style="background: var(--primary-color);">HTML5</span>
+                    <span class="btn" style="background: var(--primary-color);">CSS3</span>
+                    <span class="btn" style="background: var(--primary-color);">JavaScript</span>
+                    <span class="btn" style="background: var(--primary-color);">React</span>
+                    <span class="btn" style="background: var(--primary-color);">Vue.js</span>
+                    <span class="btn" style="background: var(--primary-color);">PHP</span>
+                    <span class="btn" style="background: var(--primary-color);">Laravel</span>
+                    <span class="btn" style="background: var(--primary-color);">WordPress</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ЦЕНЫ / ПАКЕТЫ -->
+        <section class="service-pricing" id="pricing" style="padding: 60px 0;">
+            <div class="container">
+                <h2 class="section-title">Пакеты <span>услуг</span></h2>
+                <div class="pricing-grid">
+                    <div class="card pricing-card">
+                        <h3>Старт</h3>
+                        <div class="price" style="font-size: 32px; font-weight: 700; color: var(--primary-color);">49 000 ₽</div>
+                        <ul style="margin: 20px 0; text-align: left;">
+                            <li>✓ Лендинг до 5 блоков</li>
+                            <li>✓ Адаптивная вёрстка</li>
+                            <li>✓ Базовая SEO-оптимизация</li>
+                            <li>✓ Форма обратной связи</li>
+                            <li>✓ 1 месяц поддержки</li>
+                        </ul>
+                        <a href="contacts.html" class="btn">Заказать</a>
+                    </div>
+
+                    <div class="card pricing-card" style="border: 3px solid var(--secondary-color); position: relative;">
+                        <span style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--secondary-color); color: #000; padding: 4px 20px; border-radius: 20px; font-weight: 600;">Популярный</span>
+                        <h3>Бизнес</h3>
+                        <div class="price" style="font-size: 32px; font-weight: 700; color: var(--primary-color);">99 000 ₽</div>
+                        <ul style="margin: 20px 0; text-align: left;">
+                            <li>✓ Многостраничный сайт</li>
+                            <li>✓ Уникальный дизайн</li>
+                            <li>✓ Адаптивная вёрстка</li>
+                            <li>✓ Админ-панель</li>
+                            <li>✓ Настройка аналитики</li>
+                            <li>✓ 3 месяца поддержки</li>
+                        </ul>
+                        <a href="contacts.html" class="btn btn-secondary">Заказать</a>
+                    </div>
+
+                    <div class="card pricing-card">
+                        <h3>VIP</h3>
+                        <div class="price" style="font-size: 32px; font-weight: 700; color: var(--primary-color);">от 200 000 ₽</div>
+                        <ul style="margin: 20px 0; text-align: left;">
+                            <li>✓ Интернет-магазин / CRM</li>
+                            <li>✓ Индивидуальный функционал</li>
+                            <li>✓ Высокая производительность</li>
+                            <li>✓ Всё из пакета "Бизнес"</li>
+                            <li>✓ 6 месяцев поддержки</li>
+                        </ul>
+                        <a href="contacts.html" class="btn">Заказать</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ====== ПОДВАЛ ====== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-copy">© 2026 IT-Студия</div>
+                <div class="footer-links">
+                    <a href="about.html">О нас</a>
+                    <a href="services.html">Услуги</a>
+                    <a href="portfolio.html">Портфолио</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
